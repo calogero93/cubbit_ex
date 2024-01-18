@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  '''client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    command: ["/bin/bash", "-c", "your_client_command_here"]  # Sostituisci con il comando effettivo del client
+    volumes:
+      - ./client:/app/client
+    working_dir: /app/client
+    stdin_open: true
+    tty: true
+    networks:
+      - mynetwork'''
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    command: ["/bin/bash", "-c", "your_server_command_here"]  # Sostituisci con il comando effettivo del server
+    volumes:
+      - ./server:/app/server
+    working_dir: /app/server
+    stdin_open: true
+    tty: true
+    ports:
+      - "8003:8003"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
