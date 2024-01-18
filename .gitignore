@@ -3,3 +3,4 @@
 /.vscode
 /exec
 /client/exec
+*.env
