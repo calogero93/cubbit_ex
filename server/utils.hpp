@@ -10,7 +10,7 @@
 namespace fs = std::filesystem;
 using namespace std;
 
-std::unordered_map<std::string, std::string> loadEnv(const std::string& filePath) {
+std::unordered_map<std::string, std::string> loadEnvServer(const std::string& filePath) {
     std::unordered_map<std::string, std::string> envMap;
     std::ifstream file(filePath);
 
@@ -34,7 +34,7 @@ std::unordered_map<std::string, std::string> loadEnv(const std::string& filePath
     return envMap;
 }
 
-vector<std::string> splitString(const std::string& input, char delimiter) {
+vector<std::string> splitStringServer(const std::string& input, char delimiter) {
     std::vector<std::string> parts;
 
     size_t start = 0;
@@ -51,7 +51,7 @@ vector<std::string> splitString(const std::string& input, char delimiter) {
     return parts;
 }
 
-std::vector<unsigned char> calculateSHA256(const std::vector<unsigned char>& data) {
+std::vector<unsigned char> calculateSHA256Server(const std::vector<unsigned char>& data) {
     std::vector<unsigned char> hash(SHA256_DIGEST_LENGTH, 0);
 
     SHA256_CTX sha256;
@@ -62,7 +62,7 @@ std::vector<unsigned char> calculateSHA256(const std::vector<unsigned char>& dat
     return hash;
 }
 
-std::vector<unsigned char> getUnsignedCharFile(const std::string& filePath) {
+std::vector<unsigned char> getUnsignedCharFileServer(const std::string& filePath) {
     std::ifstream file(filePath, std::ios::binary | std::ios::ate);
     if (!file.is_open()) {
         std::cerr << "Error opening file: " << filePath << std::endl;
@@ -81,7 +81,7 @@ std::vector<unsigned char> getUnsignedCharFile(const std::string& filePath) {
     }
 }
 
-std::string convertToHex(const std::vector<unsigned char>& data) {
+std::string convertToHexServer(const std::vector<unsigned char>& data) {
     std::stringstream hexStringStream;
     hexStringStream << std::hex << std::setfill('0');
     
@@ -92,7 +92,7 @@ std::string convertToHex(const std::vector<unsigned char>& data) {
     return hexStringStream.str();
 }
 
-int countFilesInFolder(const std::string& folderPath) {
+int countFilesInFolderServer(const std::string& folderPath) {
     int count = 0;
 
     try {

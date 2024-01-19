@@ -7,6 +7,7 @@
 #include <uuid/uuid.h>
 #include <filesystem>
 namespace fs = std::filesystem;
+using namespace std;
 
 std::unordered_map<std::string, std::string> loadEnv(const std::string& filePath) {
     std::unordered_map<std::string, std::string> envMap;
