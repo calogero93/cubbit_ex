@@ -21,4 +21,4 @@ RUN g++ -std=c++2a -Wall -Wextra -o server/server server/main.cpp -luuid -lboost
 RUN g++ -std=c++2a -Wall -Wextra -o client/horcrux client/src/main.cpp -luuid -lboost_system -lboost_thread -pthread -lssl -lcrypto
 
 # Comando predefinito per eseguire il programma quando il container viene avviato
-CMD /bin/bash -c "tail -f /dev/null"
+CMD /bin/bash -c "./server/server"

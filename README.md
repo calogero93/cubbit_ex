@@ -6,7 +6,7 @@ Cubbit Interview Exercise
 
 `docker build -t <name image> .`
 
-## Run Container
+## Run Container snd Server
 
 `docker run --name=<name container> -d <name image>`
 
@@ -14,9 +14,6 @@ Cubbit Interview Exercise
 
 `docker exec -it <name container> /bin/bash`
 
-## Start Server
-
-`./server/server &`
 
 ## Start Client
 
